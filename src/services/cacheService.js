@@ -20,9 +20,9 @@ class Cache {
 
     }
 
-    del(keys)
+    del(key)
     {
-        this.cache.del(keys);
+        this.cache.del(key);
     }
 
     flush() {

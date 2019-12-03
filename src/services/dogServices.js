@@ -9,8 +9,9 @@ const getDogList = async () => {
     let response = [];
     const key = 'dogs';
     try {
-        response = cache.get('dogs', async() => {
-            return await axios.get('https://dog.ceo/api/breeds/list/all');
+        response = cache.get(key, async() => {
+            const newValueToStore = await axios.get('https://dog.ceo/api/breeds/list/all');
+            return newValueToStore.data;
         });
     }
     catch (e) {
